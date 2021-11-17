@@ -1,0 +1,71 @@
+@import '../shared/variables.scss';
+
+.navbar-top {
+	background-color: $primary-dark;
+	padding: 0.5rem;
+	padding-bottom: 0.2rem;
+
+	& ul {
+		list-style: none;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+
+		& .left {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+
+			& img {
+				height: 40px;
+				aspect-ratio: 1/1;
+				margin-right: 0.3rem;
+				object-fit: cover;
+				border-radius: 20px;
+			}
+
+			& li {
+				font-size: 36px;
+				margin-right: 1rem;
+				user-select: none;
+
+				&:hover {
+					cursor: pointer;
+				}
+			}
+
+			& li:not(.active-view) {
+				color: white;
+				transition: color 0.2s;
+
+				&:hover {
+					color: $accent-dark;
+					transition: color 0.6s;
+				}
+			}
+		}
+
+		& .right {
+			color: white;
+		}
+	}
+}
+
+.active-view {
+	color: $accent;
+	transition: color 0.2s;
+}
+
+.spinning {
+	animation: spinning 0.5s linear infinite;
+}
+
+@keyframes spinning {
+	from {
+		transform: rotate(0deg);
+	}
+	to {
+		transform: rotate(360deg);
+	}
+}
