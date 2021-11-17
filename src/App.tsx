@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './App.scss';
+import './shared/global.scss';
 import { Nav } from './components/Nav';
 import { Routing } from './routes/Routing';
 
