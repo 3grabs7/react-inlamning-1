@@ -4,17 +4,13 @@ import './shared/global.scss';
 import { Nav } from './components/Nav';
 import { Routing } from './routes/Routing';
 
-enum appState {
-	GUEST = 'Guest',
-	PATRON = 'Patron',
-	VIP = 'Vip',
-}
-
 function App() {
 	return (
-		<Routing>
-			<Nav />
-		</Routing>
+		<div>
+			<Routing>
+				<Nav />
+			</Routing>
+		</div>
 	);
 }
 
