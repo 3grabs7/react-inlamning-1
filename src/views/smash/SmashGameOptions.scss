@@ -1,0 +1,17 @@
+@import '../../shared/variables.scss';
+
+.game-option-container {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	& .radio-group {
+		font-size: 40px;
+	}
+}
+
+input[type='radio'] {
+	background-color: red;
+}
