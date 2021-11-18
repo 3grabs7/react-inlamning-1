@@ -1,0 +1,47 @@
+@import '../../shared/variables.scss';
+
+.game-container {
+	display: grid;
+	width: 80%;
+	aspect-ratio: 16/9;
+	margin: 0 auto;
+	margin-top: 1rem;
+
+	box-shadow: 0 2px 2.5px 0.5px $primary-dark;
+	background-color: $accent-light;
+
+	&:hover {
+		cursor: crosshair;
+	}
+}
+
+.game-container.easy {
+	grid-template-columns: repeat(4, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	& div img {
+		object-fit: cover;
+		width: 100%;
+		max-height: 100%;
+		object-position: 0 -150px;
+	}
+}
+.game-container.medium {
+	grid-template-columns: repeat(8, 1fr);
+	grid-template-rows: repeat(4, 1fr);
+	& div img {
+		object-fit: cover;
+		width: 100%;
+		max-height: 100%;
+		object-position: 0 -70px;
+	}
+}
+.game-container.bjorn {
+	grid-template-columns: repeat(16, 1fr);
+	grid-template-rows: repeat(9, 1fr);
+	& div img {
+		object-fit: cover;
+		width: 100%;
+		max-height: 100%;
+		object-position: 0 -45px;
+	}
+}
