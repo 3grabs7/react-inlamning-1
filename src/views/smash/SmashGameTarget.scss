@@ -1,0 +1,7 @@
+@import '../../shared/variables.scss';
+
+.target {
+	border: 1px solid $accent;
+	user-select: none;
+	overflow: hidden;
+}
