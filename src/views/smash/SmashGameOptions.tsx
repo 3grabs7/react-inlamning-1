@@ -13,44 +13,39 @@ export function SmashGameOptions(
 ) {
 	const [diff, setDiff] = useState(Difficulty.EASY);
 
+	const changeDifficulty = (diff: Difficulty) => {
+		setDiff(diff);
+		props.onDifficultChange(diff);
+	};
+
 	return (
 		<div className='game-option-container'>
 			<h3>Diffculiticy</h3>
 			<div>
 				<p>Current : {diff}</p>
 			</div>
-			<div className='radio-group'>
-				<input
-					onChange={() => {
-						setDiff(Difficulty.EASY);
-						props.onDifficultChange(Difficulty.EASY);
+			<div className='button-group'>
+				<button
+					onClick={() => {
+						changeDifficulty(Difficulty.EASY);
 					}}
-					name='difficulty'
-					id='easy'
-					type='radio'
-					defaultChecked
-				/>
-				<label htmlFor='easy'>Easy</label>
-				<input
-					onChange={() => {
-						setDiff(Difficulty.MEDIUM);
-						props.onDifficultChange(Difficulty.MEDIUM);
+				>
+					Easy
+				</button>
+				<button
+					onClick={() => {
+						changeDifficulty(Difficulty.MEDIUM);
 					}}
-					name='difficulty'
-					id='medium'
-					type='radio'
-				/>
-				<label htmlFor='medium'>Medium</label>
-				<input
-					onChange={() => {
-						setDiff(Difficulty.BJORN);
-						props.onDifficultChange(Difficulty.BJORN);
+				>
+					Medium
+				</button>
+				<button
+					onClick={() => {
+						changeDifficulty(Difficulty.BJORN);
 					}}
-					name='difficulty'
-					id='bjorn'
-					type='radio'
-				/>
-				<label htmlFor='bjorn'>Björn 2</label>
+				>
+					Björn
+				</button>
 			</div>
 		</div>
 	);
