@@ -1,17 +1,35 @@
 @import '../../shared/variables.scss';
 
 .game-option-container {
-	width: 100%;
+	padding-top: 5rem;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
 
-	& .radio-group {
-		font-size: 40px;
+	& h3 {
+		font-size: 32px;
+	}
+
+	& div p {
+		font-size: 18px;
+		margin-bottom: 0.2rem;
 	}
 }
 
-input[type='radio'] {
-	background-color: red;
+.button-group {
+	display: flex;
+	gap: 0.1rem;
+	flex-wrap: nowrap;
+
+	& button {
+		background-color: $primary-dark;
+		border-radius: 7px;
+		padding: 0.2rem;
+		font-size: 20px;
+
+		&:hover {
+			cursor: pointer;
+		}
+	}
 }
