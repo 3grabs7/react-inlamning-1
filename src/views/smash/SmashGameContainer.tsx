@@ -72,16 +72,17 @@ const difficultySize: DifficultySize = {
 	},
 };
 
-interface DifficultySize {
+export interface DifficultySize {
 	[key: string]: TargetComponentSize;
 }
 
-interface SmashTarget {
+export interface SmashTarget {
 	id: number;
 	isSmashed: boolean;
+	onSmash: () => void;
 }
 
-interface TargetComponentSize {
+export interface TargetComponentSize {
 	width: number;
 	height: number;
 }
