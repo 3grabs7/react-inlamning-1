@@ -1,8 +1,16 @@
 @import '../../shared/variables.scss';
 
+.wrapper {
+	width: 90%;
+	margin: 0 auto;
+	gap: 2rem;
+	display: flex;
+	align-items: flex-start;
+}
+
 .game-container {
 	display: grid;
-	width: 80%;
+	width: 100%;
 	aspect-ratio: 16/9;
 	margin: 0 auto;
 	margin-top: 1rem;
