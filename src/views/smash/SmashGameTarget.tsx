@@ -6,10 +6,8 @@ import targetImg from '../../shared/target.png';
 import smashSound from '../../shared/uh.mp3';
 import targetImgSmashed from '../../shared/target-smashed.png';
 
-export function SmashGameTarget(
-	props: InferProps<typeof SmashGameTarget.propTypes>
-) {
-	const [smashed, setSmashed] = useState(props.isSmashed);
+export function SmashGameTarget() {
+	const [smashed, setSmashed] = useState(false);
 	const [targetDrawn, setTargetDrawn] = useState(true);
 
 	const clickTarget = () => {
@@ -40,8 +38,3 @@ export function SmashGameTarget(
 		</div>
 	);
 }
-
-SmashGameTarget.propTypes = {
-	id: PropTypes.number.isRequired,
-	isSmashed: PropTypes.bool.isRequired,
-};
