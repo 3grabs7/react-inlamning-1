@@ -4,7 +4,7 @@ import './ReactGameContainer.scss';
 export const ReactGameContainer = () => {
 	const [isActive, setIsActive] = useState(false);
 	const [timeElapsed, setTimeElapsed] = useState(0);
-	const [score, setScore] = useState(0);
+	const [score, setScore] = useState<number | string>('- ');
 	const [intervalTracker, setIntervalTracker] = useState<
 		NodeJS.Timeout | undefined
 	>();
@@ -23,9 +23,9 @@ export const ReactGameContainer = () => {
 			}
 
 			setIsActive(false);
-			if (timeElapsed < score) {
-				setScore(timeElapsed);
-			}
+
+			if (score === '- ' || timeElapsed < score) setScore(timeElapsed);
+
 			setTimeElapsed(0);
 			return;
 		}
