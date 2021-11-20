@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import PropTypes, { InferProps } from 'prop-types';
 import './SmashGameTarget.scss';
 import targetImg from '../../shared/target.png';
 //@ts-ignore
@@ -31,6 +30,7 @@ export function SmashGameTarget() {
 					src={smashed ? targetImgSmashed : targetImg}
 					alt=''
 					draggable='false'
+					className={smashed ? 'shake' : ''}
 				/>
 			) : (
 				''
