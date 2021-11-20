@@ -3,6 +3,7 @@ import './ReactGameContainer.scss';
 
 export const ReactGameContainer = () => {
 	const [isActive, setIsActive] = useState(false);
+	const [isWaiting, setIsWaiting] = useState(false);
 	const [timeElapsed, setTimeElapsed] = useState(0);
 	const [latest, setLatest] = useState<number | string>('- ');
 	const [score, setScore] = useState<number | string>('- ');
@@ -11,21 +12,24 @@ export const ReactGameContainer = () => {
 	>();
 
 	const onButtonClick = () => {
+		// if game has started and timer is running
 		if (isActive) {
+			// clear timer, save score and reset game state
 			if (intervalTracker) clearInterval(intervalTracker);
-
 			setIsActive(false);
-
 			if (score === '- ' || timeElapsed < score) setScore(timeElapsed);
-
 			setLatest(timeElapsed);
 			setTimeElapsed(0);
 			return;
 		}
 
+		// set when timer will begin
 		const timeUntilActive = Math.random() * 5000;
+		// waiting will remove button from screen
+		setIsWaiting(true);
 
 		setTimeout(() => {
+			setIsWaiting(false);
 			setIsActive(true);
 			const interval = setInterval(() => {
 				setTimeElapsed((previousState) => {
@@ -46,12 +50,16 @@ export const ReactGameContainer = () => {
 					Latest : {latest}ms <br />
 					ms High Score : {score}ms
 				</div>
-				<button
-					className={isActive ? 'active' : ''}
-					onClick={() => onButtonClick()}
-				>
-					{isActive ? 'STOP' : 'START'}
-				</button>
+				{isWaiting ? (
+					<></>
+				) : (
+					<button
+						className={isActive ? 'active' : ''}
+						onClick={() => onButtonClick()}
+					>
+						{isActive ? 'STOP' : 'START'}
+					</button>
+				)}
 			</div>
 		</div>
 	);
