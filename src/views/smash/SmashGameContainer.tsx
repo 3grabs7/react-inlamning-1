@@ -1,21 +1,27 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './SmashGameContainer.scss';
 import { Difficulty, SmashGameOptions } from './SmashGameOptions';
 import { SmashGameTarget } from './SmashGameTarget';
 
 export function SmashGameContainer() {
 	const [difficulty, setDifficulty] = useState(Difficulty.EASY);
-	const targetComponentSize =
-		difficultySize[difficulty.toString()].width *
-		difficultySize[difficulty.toString()].height;
-
-	const elements = [];
-	for (let i = 0; i < targetComponentSize; i++) {
-		elements.push(<SmashGameTarget key={i} />);
-	}
+	const [elements, setElements] = useState<JSX.Element[]>([]);
+	const [targetComponentSize, setTargetComponentSize] = useState(0);
 
 	const setDifficultyCallback = (diff: Difficulty): void => {
+		reset();
 		setDifficulty(diff);
+	};
+
+	useEffect(() => {
+		console.log('use effect triggers');
+
+		setTargetComponentSize(calcTargetComponentSize(difficulty));
+		setElements([...fillTargetCollection(targetComponentSize)]);
+	}, [difficulty, targetComponentSize]);
+
+	const reset = () => {
+		setElements([]);
 	};
 
 	return (
@@ -24,6 +30,23 @@ export function SmashGameContainer() {
 			<SmashGameOptions onDifficultChange={setDifficultyCallback} />
 		</div>
 	);
+}
+
+function calcTargetComponentSize(diff: Difficulty): number {
+	return (
+		difficultySize[diff.toString()].width *
+		difficultySize[diff.toString()].height
+	);
+}
+
+function fillTargetCollection(size: number): JSX.Element[] {
+	let elements: JSX.Element[] = [];
+
+	for (let i = 0; i < size; i++) {
+		elements.push(<SmashGameTarget key={i} />);
+	}
+
+	return elements;
 }
 
 function generateContainerClass(diff: Difficulty): string {
@@ -41,9 +64,13 @@ export const difficultySize: DifficultySize = {
 		height: 4,
 	},
 
-	[Difficulty.BJORN]: {
+	[Difficulty.WORDPRESS]: {
 		width: 16,
 		height: 9,
+	},
+	[Difficulty.NONE]: {
+		width: 0,
+		height: 0,
 	},
 };
 
