@@ -5,7 +5,8 @@ import './SmashGameOptions.scss';
 export enum Difficulty {
 	EASY = 'Easy',
 	MEDIUM = 'Medium',
-	BJORN = 'Bjorn',
+	WORDPRESS = 'Wordpress',
+	NONE = '',
 }
 
 export function SmashGameOptions(
@@ -41,10 +42,10 @@ export function SmashGameOptions(
 				</button>
 				<button
 					onClick={() => {
-						changeDifficulty(Difficulty.BJORN);
+						changeDifficulty(Difficulty.WORDPRESS);
 					}}
 				>
-					Björn
+					Wordpress
 				</button>
 			</div>
 		</div>
