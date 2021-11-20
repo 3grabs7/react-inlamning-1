@@ -10,18 +10,9 @@ export const ReactGameContainer = () => {
 		NodeJS.Timeout | undefined
 	>();
 
-	useEffect(() => {
-		//effect
-		return () => {
-			//cleanup
-		};
-	}, []);
-
 	const onButtonClick = () => {
 		if (isActive) {
-			if (intervalTracker) {
-				clearInterval(intervalTracker);
-			}
+			if (intervalTracker) clearInterval(intervalTracker);
 
 			setIsActive(false);
 
@@ -37,9 +28,6 @@ export const ReactGameContainer = () => {
 		setTimeout(() => {
 			setIsActive(true);
 			const interval = setInterval(() => {
-				if (isActive) {
-					return;
-				}
 				setTimeElapsed((previousState) => {
 					const number = previousState + 1;
 					return number;
