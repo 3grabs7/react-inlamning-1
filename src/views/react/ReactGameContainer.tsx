@@ -48,7 +48,7 @@ export const ReactGameContainer = () => {
 				<div>
 					Time Elapsed : {timeElapsed}ms <br />
 					Latest : {latest}ms <br />
-					ms High Score : {score}ms
+					High Score : {score}ms
 				</div>
 				{isWaiting ? (
 					<></>
