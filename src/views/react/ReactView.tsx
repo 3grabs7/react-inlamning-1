@@ -3,7 +3,7 @@ import { ReactGameContainer } from './ReactGameContainer';
 
 export const ReactView = () => {
 	return (
-		<div>
+		<div className='fade-in'>
 			<ReactGameContainer />
 		</div>
 	);

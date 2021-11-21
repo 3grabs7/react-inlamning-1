@@ -4,7 +4,7 @@ import './HomeView.scss';
 
 export const HomeView = () => {
 	return (
-		<div className='home-container'>
+		<div className='fade-in home-container'>
 			<HomeViewHeader />
 			<div>Content</div>
 			<div>Bottom</div>
