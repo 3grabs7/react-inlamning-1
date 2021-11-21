@@ -33,6 +33,10 @@
 			color: white;
 			animation: shake 1s infinite;
 		}
+
+		&:hover {
+			cursor: pointer;
+		}
 	}
 }
 
