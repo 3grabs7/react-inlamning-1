@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
+import { difficultySize } from './difficulty-size.object';
+import { Difficulty } from './difficulty.enum';
 import './SmashGameContainer.scss';
-import { Difficulty, SmashGameOptions } from './SmashGameOptions';
+import { SmashGameOptions } from './SmashGameOptions';
 import { SmashGameTarget } from './SmashGameTarget';
 
 export function SmashGameContainer() {
@@ -51,34 +53,4 @@ function fillTargetCollection(size: number): JSX.Element[] {
 
 function generateContainerClass(diff: Difficulty): string {
 	return `game-container ${diff.toString().toLowerCase()}`;
-}
-
-export const difficultySize: DifficultySize = {
-	[Difficulty.EASY]: {
-		width: 4,
-		height: 2,
-	},
-
-	[Difficulty.MEDIUM]: {
-		width: 8,
-		height: 4,
-	},
-
-	[Difficulty.WORDPRESS]: {
-		width: 16,
-		height: 9,
-	},
-	[Difficulty.NONE]: {
-		width: 0,
-		height: 0,
-	},
-};
-
-export interface DifficultySize {
-	[key: string]: TargetComponentSize;
-}
-
-export interface TargetComponentSize {
-	width: number;
-	height: number;
 }
