@@ -1,0 +1,16 @@
+@import '../../shared/variables.scss';
+
+.home-view-header {
+	background-color: red;
+	background-color: $accent-dark;
+	padding: 1rem;
+
+	& h1 {
+		font-size: 90px;
+		font-family: fantasy;
+	}
+
+	& p {
+		font-family: Verdana;
+	}
+}

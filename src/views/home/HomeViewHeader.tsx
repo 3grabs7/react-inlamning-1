@@ -1,8 +1,9 @@
 import React from 'react';
+import './HomeViewHeader.scss';
 
 export const HomeViewHeader = () => {
 	return (
-		<div>
+		<div className='home-view-header'>
 			<h1>Welcome</h1>
 			<div>
 				<p>Play games, waste time, get pointless credit</p>
