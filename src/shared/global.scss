@@ -11,3 +11,20 @@
 body {
 	background-color: $primary;
 }
+
+.fade-in {
+	animation: fadeinout 1s;
+}
+
+.fade-out {
+	animation: fadeinout 1s reverse;
+}
+
+@keyframes fadeinout {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}
