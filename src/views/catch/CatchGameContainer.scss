@@ -1,0 +1,97 @@
+@import '../../shared/variables.scss';
+
+.catch-game-container {
+	background-color: $accent;
+	color: black;
+	padding: 1rem 10%;
+	height: 94vh;
+}
+
+.game-box {
+	position: relative;
+	background-color: $accent-light;
+	height: 80vh;
+	box-shadow: -1px 1px 5px 0 $primary-dark;
+}
+
+.catch-game-instructions {
+	color: black;
+}
+
+.target-container,
+.player-container {
+	aspect-ratio: 1/1;
+	position: absolute;
+	border: 1px solid black;
+	border-radius: 50%;
+	overflow: hidden;
+	background-color: $primary-light;
+}
+
+.target-container {
+	width: 200px;
+	// top: 0;
+	// left: calc(50% - 100px);
+}
+
+.player-container {
+	width: 400px;
+	top: calc(50% - 200px);
+	left: calc(50% - 200px);
+}
+
+#target {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+#player {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+.game-over {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 10rem;
+
+	h1 {
+		color: $accent-dark;
+		font-size: 120px;
+		font-family: fantasy;
+
+		&::after {
+			content: 'GAME OVER';
+			color: $primary-dark;
+			display: inline-block;
+			position: absolute;
+			top: 0.5%;
+			left: 32.5%;
+			padding-top: 10rem;
+			//transform: translateX(-99%) translateY(5%);
+		}
+	}
+
+	button {
+		background-color: $primary-dark;
+		font-size: 60px;
+		padding: 1rem;
+		border-radius: 12px;
+
+		&:hover {
+			cursor: pointer;
+			color: $accent;
+		}
+	}
+}
+
+.score-board {
+	padding: 1rem;
+	width: 100%;
+	height: 12vh;
+	background-color: $accent-dark;
+	box-shadow: 0 2px 3px 1px $primary-dark;
+}
