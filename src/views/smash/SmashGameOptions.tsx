@@ -1,13 +1,7 @@
 import React, { useState } from 'react';
 import PropTypes, { InferProps } from 'prop-types';
 import './SmashGameOptions.scss';
-
-export enum Difficulty {
-	EASY = 'Easy',
-	MEDIUM = 'Medium',
-	WORDPRESS = 'Wordpress',
-	NONE = '',
-}
+import { Difficulty } from './difficulty.enum';
 
 export function SmashGameOptions(
 	props: InferProps<typeof SmashGameOptions.propTypes>
