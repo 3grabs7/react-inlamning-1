@@ -3,7 +3,7 @@ import { SmashGameContainer } from './SmashGameContainer';
 
 export const SmashView = () => {
 	return (
-		<div>
+		<div className='fade-in'>
 			<SmashGameContainer />
 		</div>
 	);
