@@ -65,7 +65,17 @@ export const Nav = () => {
 					</li>
 				</div>
 				<div className='right'>
-					<p>HÖGER SIDA</p>
+					<p>LEVEL</p>
+					<p
+						className={
+							currentView.pathname === RoutePaths.stats ? 'active-view' : ''
+						}
+						onClick={() => {
+							navigate(RoutePaths.stats);
+						}}
+					>
+						STATS
+					</p>
 				</div>
 			</ul>
 		</div>
