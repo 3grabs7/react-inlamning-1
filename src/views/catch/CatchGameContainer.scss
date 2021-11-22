@@ -30,8 +30,10 @@
 
 .target-container {
 	width: 200px;
-	// top: 0;
-	// left: calc(50% - 100px);
+
+	&:hover {
+		cursor: move;
+	}
 }
 
 .player-container {
@@ -94,4 +96,8 @@
 	height: 12vh;
 	background-color: $accent-dark;
 	box-shadow: 0 2px 3px 1px $primary-dark;
+}
+
+.waiting:hover {
+	cursor: wait;
 }

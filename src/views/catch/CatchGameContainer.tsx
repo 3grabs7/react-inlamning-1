@@ -31,8 +31,6 @@ export const CatchGameContainer = () => {
 				left: `${(Math.random() * 100).toString().split('.')[0]}%`,
 			};
 
-			console.log(position);
-
 			setTarget(
 				<div className='target-container' style={position}>
 					<img
@@ -72,6 +70,7 @@ export const CatchGameContainer = () => {
 						{' '}
 						<div className='player-container'>
 							<img
+								className={playerReady && !targetActive ? 'waiting' : ''}
 								onMouseOver={() => {
 									if (targetActive) return;
 									startGame();
