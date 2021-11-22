@@ -6,6 +6,7 @@ import { HomeView } from '../views/home/HomeView';
 import { NotFoundView } from '../views/not-found/NotFoundView';
 import { ReactView } from '../views/react/ReactView';
 import { SmashView } from '../views/smash/SmashView';
+import { StatsView } from '../views/stats/StatsView';
 import routePaths from './RoutePaths';
 
 export function Routing({ children }: InferProps<typeof Routing.propTypes>) {
@@ -14,6 +15,7 @@ export function Routing({ children }: InferProps<typeof Routing.propTypes>) {
 			{children}
 			<Routes>
 				<Route path={routePaths.home} element={<HomeView />} />
+				<Route path={routePaths.stats} element={<StatsView />} />
 				<Route path={routePaths.smash} element={<SmashView />} />
 				<Route path={routePaths.catch} element={<CatchView />} />
 				<Route path={routePaths.react} element={<ReactView />} />

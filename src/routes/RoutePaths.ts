@@ -3,6 +3,7 @@ const routePaths = {
 	smash: '/smash',
 	catch: '/catch',
 	react: '/react',
+	stats: '/stats',
 };
 
 export default routePaths;
