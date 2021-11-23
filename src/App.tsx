@@ -3,14 +3,15 @@ import './App.scss';
 import './shared/global.scss';
 import { Nav } from './components/Nav';
 import { Routing } from './routes/Routing';
+import { StatsContext, defaultStats } from './shared/stats-context';
 
 function App() {
 	return (
-		<div>
+		<StatsContext.Provider value={defaultStats}>
 			<Routing>
 				<Nav />
 			</Routing>
-		</div>
+		</StatsContext.Provider>
 	);
 }
 
