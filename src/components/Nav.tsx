@@ -22,7 +22,14 @@ export const Nav = () => {
 						setNavHover(false);
 					}}
 				>
-					<img className={navHover ? 'spinning' : ''} src={logo} alt='' />
+					<img
+						onClick={() => {
+							navigate(RoutePaths.pokemon);
+						}}
+						className={navHover ? 'spinning' : ''}
+						src={logo}
+						alt=''
+					/>
 					<li
 						className={
 							currentView.pathname === RoutePaths.home ? 'active-view' : ''
