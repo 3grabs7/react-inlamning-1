@@ -4,6 +4,7 @@ const routePaths = {
 	catch: '/catch',
 	react: '/react',
 	stats: '/stats',
+	pokemon: '/pokemon',
 };
 
 export default routePaths;
