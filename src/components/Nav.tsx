@@ -1,15 +1,15 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import './Nav.scss';
 import { useLocation, useNavigate } from 'react-router-dom';
 import RoutePaths from '../routes/RoutePaths';
 import logo from '../shared/logo.png';
-import { StatsContext } from '../shared/stats-context';
+import { useStats } from '../shared/stats-context';
 
 export const Nav = () => {
 	const navigate = useNavigate();
 	const currentView = useLocation();
-	const stats = useContext(StatsContext);
 
+	const stats = useStats();
 	const [navHover, setNavHover] = useState(false);
 
 	return (
@@ -74,16 +74,18 @@ export const Nav = () => {
 					</li>
 				</div>
 				<div className='right'>
-					<p>{stats?.currentLevel}</p>
+					<div>{stats?.currentLevel}</div>
 					<p
 						className={
-							currentView.pathname === RoutePaths.stats ? 'active-view' : ''
+							currentView.pathname === RoutePaths.stats
+								? 'active-view stats-button'
+								: 'stats-button'
 						}
 						onClick={() => {
 							navigate(RoutePaths.stats);
 						}}
 					>
-						STATS
+						Profile
 					</p>
 				</div>
 			</ul>
