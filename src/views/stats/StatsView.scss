@@ -1,0 +1,45 @@
+@import '/src/shared/variables.scss';
+
+.options {
+	padding: 1rem;
+
+	& h3 {
+		color: $accent-light;
+		font-size: 40px;
+		width: 15%;
+		border-bottom: 1px solid rgba($primary-dark, 0.3);
+		box-shadow: 0 4px 5px -5px $primary-dark;
+		margin-bottom: 0.3rem;
+	}
+
+	& input {
+		padding: 0.6rem;
+		font-size: 26px;
+		color: $accent-light;
+		background-color: $primary-dark;
+		border-radius: 7px;
+		margin-right: 0.5rem;
+
+		box-shadow: -1px 1px 3px 0 $primary-dark;
+		border: none;
+		border-bottom: 1px solid $primary;
+	}
+	& button {
+		padding: 0.6rem;
+		font-size: 26px;
+		border-radius: 7px;
+		color: $accent-light;
+		background-color: $primary-dark;
+		transition: all 0.2s;
+
+		box-shadow: -1px 1px 3px 0 $primary-dark;
+		border: none;
+		border-bottom: 1px solid $primary;
+
+		&:hover {
+			cursor: pointer;
+			opacity: 0.8;
+			transition: opacity 0.3s;
+		}
+	}
+}
