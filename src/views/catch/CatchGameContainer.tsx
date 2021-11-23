@@ -91,7 +91,7 @@ export const CatchGameContainer = () => {
 
 				<div className='catch-game-instructions'>
 					{!gameOver && !playerReady && !targetActive
-						? 'HOLD MOUSE OVER JONKEN AND WAIT'
+						? `HOLD MOUSE OVER JONKEN AND WAIT, DON'T MOVE BEFORE TARGET APPEARS!!`
 						: ''}
 					{!gameOver && playerReady && !targetActive ? 'WAIT FOR IT' : ''}
 					{!gameOver && targetActive ? 'CATCH THAT MAN!' : ''}
