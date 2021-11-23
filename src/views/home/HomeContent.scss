@@ -1,0 +1,40 @@
+@import '/src/shared/variables.scss';
+
+.home-content-wrapper {
+	background-color: $primary;
+
+	& .stats-wrapper {
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		background-color: rgba($primary-dark, 0.6);
+		box-shadow: 0 0 3px 0 $primary-dark;
+
+		& .stats-box {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			padding: 0.5rem;
+			padding-bottom: 4rem;
+			margin: 2rem 3rem;
+			text-align: center;
+			background-color: $primary-dark;
+			box-shadow: 0 0 3px 1px $primary-dark;
+
+			h3 {
+				font-size: 26px;
+				margin-bottom: 0.4rem;
+				color: $accent;
+			}
+
+			h1 {
+				font-size: 50px;
+				color: $accent-light;
+			}
+		}
+
+		& .stats-box:first-child {
+			grid-column-start: 1;
+			grid-column-end: 3;
+		}
+	}
+}
