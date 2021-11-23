@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import './Nav.scss';
 import { useLocation, useNavigate } from 'react-router-dom';
 import RoutePaths from '../routes/RoutePaths';
 import logo from '../shared/logo.png';
+import { StatsContext } from '../shared/stats-context';
 
 export const Nav = () => {
 	const navigate = useNavigate();
 	const currentView = useLocation();
+	const stats = useContext(StatsContext);
 
 	const [navHover, setNavHover] = useState(false);
 
@@ -72,7 +74,7 @@ export const Nav = () => {
 					</li>
 				</div>
 				<div className='right'>
-					<p>LEVEL</p>
+					<p>{stats?.currentLevel}</p>
 					<p
 						className={
 							currentView.pathname === RoutePaths.stats ? 'active-view' : ''
