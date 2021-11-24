@@ -14,31 +14,21 @@ export const PokemonView: FC<StatsViewProps> = () => {
 		undefined
 	);
 	const [pokemonCollection, setPokemonCollection] = useState<Pokemon[]>([]);
-	const [pokemonResponse, setPokemonResponse] = useState<
-		AxiosResponse | undefined
-	>();
-	const [loaded, setLoaded] = useState<boolean>(false);
 
 	const fetchData = async () => {
 		const response: AxiosResponse = await PokemonApiService.getAll();
 
-		setPokemonResponse(response);
+		response?.data.results.forEach(async (result: any) => {
+			const pokemon = await PokemonApiService.getOne(result.name);
 
-		const promiseArray: any = [];
-
-		pokemonResponse?.data.results.forEach(async (result: any) => {
-			promiseArray.push(await PokemonApiService.getOne(result.name));
-			setPokemonCollection(
-				promiseArray.map((pokemon: any) => {
-					return {
-						name: pokemon.data.name,
-						img: pokemon.data.sprites.front_default,
-					};
-				})
-			);
+			setPokemonCollection((previous) => [
+				...previous,
+				{
+					name: pokemon.data.name,
+					img: pokemon.data.sprites.front_default,
+				},
+			]);
 		});
-
-		setLoaded(true);
 	};
 
 	useEffect(() => {
@@ -47,7 +37,7 @@ export const PokemonView: FC<StatsViewProps> = () => {
 		})();
 
 		return () => {};
-	}, [loaded]);
+	}, []);
 
 	const handleSearch = async () => {
 		const response: AxiosResponse = await PokemonApiService.getOne(
@@ -62,7 +52,7 @@ export const PokemonView: FC<StatsViewProps> = () => {
 		]);
 	};
 
-	return loaded ? (
+	return (
 		<div>
 			<div className='form'>
 				<div>SJUKA STATS</div>
@@ -91,8 +81,6 @@ export const PokemonView: FC<StatsViewProps> = () => {
 				)}
 			</div>
 		</div>
-	) : (
-		<div>LOADING</div>
 	);
 };
 
