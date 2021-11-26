@@ -1,4 +1,3 @@
-import { useContext } from 'react';
 import { useStats, useStatsUpdate } from '../../shared/stats-context';
 import './HomeContent.scss';
 
