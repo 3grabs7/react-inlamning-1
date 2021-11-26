@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { AxiosResponse } from 'axios';
 import React, { FC, useEffect, useState } from 'react';
-import PokemonApiService from '../../api/PokemonApiService';
+import PokemonApiService from '../../api/pokemon/PokemonApiService';
 import './PokemonView.scss';
 
 interface StatsViewProps {
@@ -36,7 +36,9 @@ export const PokemonView: FC<StatsViewProps> = () => {
 			await fetchData();
 		})();
 
-		return () => {};
+		return () => {
+			forScience(pokemonCollection);
+		};
 	}, []);
 
 	const handleSearch = async () => {
@@ -87,4 +89,8 @@ export const PokemonView: FC<StatsViewProps> = () => {
 interface Pokemon {
 	name: string;
 	img: string;
+}
+
+function forScience(pokemonCollection: Pokemon[]): void {
+	console.log('The things we do for G');
 }
