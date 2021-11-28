@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "http://3grabs7.github.io/home",
   "dependencies": {
+    "@apollo/client": "^3.5.5",
     "@testing-library/jest-dom": "^5.15.1",
     "@testing-library/react": "^11.1.0",
     "@testing-library/user-event": "^12.1.10",
@@ -13,6 +14,7 @@
     "@types/react-dom": "^17.0.0",
     "ansi-regex": "^5.0.1",
     "axios": "^0.24.0",
+    "graphql": "^16.0.1",
     "immer": "^9.0.6",
     "nth-check": "^2.0.1",
     "path-parse": "^1.0.7",
