@@ -1,0 +1,10 @@
+@import '/src/shared/variables.scss';
+
+.result-container {
+	margin: 0.5rem;
+	background-color: $primary-dark;
+
+	& h1 {
+		font-size: 60px;
+	}
+}
