@@ -1,0 +1,11 @@
+@import '/src/shared/variables.scss';
+
+.result-list-item {
+	padding: 0.2rem;
+	&:nth-last-child(odd) {
+		background-color: $primary-light;
+	}
+	&:nth-last-child(even) {
+		background-color: $primary;
+	}
+}
