@@ -1,3 +1,4 @@
+import { Results } from '../../components/Results';
 import { useStats, useStatsUpdate } from '../../shared/stats-context';
 import './HomeContent.scss';
 
@@ -20,7 +21,9 @@ export const HomeContent = () => {
 					<h3>Points</h3>
 					<h1>{stats?.points}</h1>
 				</div>
-				<div>FET IMAGE</div>
+				<div>
+					<Results></Results>
+				</div>
 			</div>
 		</div>
 	);
