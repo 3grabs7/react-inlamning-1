@@ -3,7 +3,7 @@ import './Nav.scss';
 import { useLocation, useNavigate } from 'react-router-dom';
 import RoutePaths from '../routes/RoutePaths';
 import logo from '../shared/logo.png';
-import { useStats } from '../shared/stats-context';
+import { useStats } from '../provider/StatsProvider';
 
 export const Nav = () => {
 	const navigate = useNavigate();
