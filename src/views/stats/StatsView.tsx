@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { useStats, useStatsUpdate } from '../../shared/stats-context';
+import { useStats, useStatsUpdate } from '../../provider/StatsProvider';
 import './StatsView.scss';
 
 export const StatsView = () => {
