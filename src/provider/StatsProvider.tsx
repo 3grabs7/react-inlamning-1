@@ -1,5 +1,6 @@
 import React, { Context, createContext, FC, useContext, useState } from 'react';
 import { Stats } from '../interfaces/stats-context.interface';
+
 import { Level } from './stats-context.enums';
 
 const defaultStats: Stats = {
@@ -8,10 +9,10 @@ const defaultStats: Stats = {
 	name: 'Dread Pirate Roberts',
 };
 
-const StatsContext: Context<Stats | undefined> = createContext<
-	Stats | undefined
->(undefined);
-const StatsUpdateContext: Context<any> = createContext(undefined);
+const StatsContext: Context<Stats> = createContext<Stats>(defaultStats);
+const StatsUpdateContext: Context<(_: Stats) => void> = createContext(
+	(defaultStats) => {}
+);
 
 export const useStats = () => {
 	return useContext(StatsContext);

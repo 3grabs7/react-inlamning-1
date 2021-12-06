@@ -1,5 +1,6 @@
 import { Results } from '../../components/Results';
-import { useStats, useStatsUpdate } from '../../shared/stats-context';
+import { useStats, useStatsUpdate } from '../../provider/StatsProvider';
+
 import './HomeContent.scss';
 
 export const HomeContent = () => {
