@@ -1,4 +1,4 @@
-import { Level } from '../shared/stats-context.enums';
+import { Level } from '../provider/stats-context.enums';
 
 export interface Stats {
 	currentLevel: Level;
