@@ -3,7 +3,7 @@ import './App.scss';
 import './shared/global.scss';
 import { Nav } from './components/Nav';
 import { Routing } from './routes/Routing';
-import { StatsProvider } from './shared/stats-context';
+import { StatsProvider } from './provider/StatsProvider';
 
 function App() {
 	return (
